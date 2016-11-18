@@ -29,12 +29,17 @@ var BattleContainer = React.createClass({
 		}
 	},
 	changeState: function() {
-			if (result.winnerCharater) {
+			if (result.winnerCharater.weapon === result.looserCharacter.weakness) {
 				result.winnerCharater.percent = parseInt((Math.random() * 41 + 60), 10);
 				result.winnerCharater.color = '#85D262';
 				result.looserCharacter.percent = parseInt((Math.random() * 21 + 30), 10);
 				result.looserCharacter.color = '#FE8C6A';
 
+			} else if (result.winnerCharater.weapon !== result.looserCharacter.weakness) {
+				result.winnerCharater.percent = parseInt(50, 10);
+				result.winnerCharater.color = '#85D262';
+				result.looserCharacter.percent = parseInt(50, 10);
+				result.looserCharacter.color = '#85D262';
 			}
 
 			this.setState({
@@ -52,14 +57,16 @@ var BattleContainer = React.createClass({
 		function test(data) {
 			for(var i = 0; i < data.length; i++) {
 				for(var j = 0; j < data.length; j++) {
-					if (data[i].weapon === data[j].weakness) {
-						// console.log("strong", this.props.data[i]);
-						var winnerCharater = data[i];
-						var looserCharacter = data[j];
+					if(data[i].name !== data[j].name){
+						if (data[i].weapon === data[j].weakness) {
+							// console.log("strong", this.props.data[i]);
+							var winnerCharater = data[i];
+							var looserCharacter = data[j];
+						} else if (data[i].weapon !== data[j].weakness){
+							var winnerCharater = data[j];
+							var looserCharacter = data[i];						
+						}
 					}
-				// else if (this.props.data[j].weapon === this.props.data[i].weakness) {
-				// 	console.log("strong", this.props.data[j]);
-				// }
 				}
 	
 			};

@@ -14,7 +14,6 @@ var PromptContainer = React.createClass({
 		// this.props.onValueSubmit(inputValue);
 		console.log("actions", actions);
 		this.props.dispatch(actions.fetchCharacter(this.refs.theInput.value));
-		inputValue = "";
 
 		if (this.props.routeParams.playerOne) {
 			this.context.router.push({
@@ -30,30 +29,34 @@ var PromptContainer = React.createClass({
 
 	},
 	render: function() {
+		if (this.props.data) {
+		var characters = this.props.data.map(function(character, index) {
+			return (
+				<option style={{paddingLeft:"45%"}} key={index} value={character.name}>{character.name}</option>
+			)
+		})
+		}
 		return(
 			<div className="jumbotron col-sm-6 col-sm-offset-3 text-xs-center players">
 				<h1>{this.props.route.header}</h1>
 				<div className="col-sm-12 text-xs-center">
-					<form onSubmit={this.onFormSubmit} className="text-xs-center">
-						<div className="form-group">
-							<input
-								className="form-control"
-								placeholder="Type Megaman Name"
-								type="text" ref="theInput"/>
-						</div>
-						<div className="form-group col-sm-4 col-sm-offset-4 centered">
-							<button
-								className="btn btn-block btn-primary"
-								type="submit">
-								Continue
-							</button>
-						</div>
-					</form>
+							 <select className="selectpicker btn-primary" style={{width: "400px", height: "40px", textAlignLast:"center"}} ref="theInput" defaultValue="Pick Your Megaman" onChange={this.onFormSubmit} >
+              						{characters}
+           					 </select>
+	
 				</div>
 			</div>	
 		)
 	}
 });
 
-var Container = connect()(PromptContainer);
+var mapStateToProps = function(state, props) {
+	return {
+		data: state.list,
+
+	}
+};
+
+var Container = connect(mapStateToProps)(PromptContainer);
+
 module.exports = Container;

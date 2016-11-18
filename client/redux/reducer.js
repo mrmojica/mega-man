@@ -37,6 +37,7 @@ var reducer = function(state, action) {
 		state = Object.assign({}, state, {
 				characters: selectedCharacterData
 			});
+		console.log("state", state);
 		return state
 		
 	}
