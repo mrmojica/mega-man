@@ -5,7 +5,7 @@ logs
 npm-debug.log*
 
 # build
-
+build
 
 # Dependency directories
 node_modules

@@ -24,7 +24,7 @@
     "node": "4.4.7",
     "npm": "2.15.8"
   },
-  "author": "",
+  "author": "sofy",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
