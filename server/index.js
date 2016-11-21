@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 app.use('/', express.static('build'));
 
-var db = 'mongodb://localhost:27017/api';
+var db = 'mongodb://Megaman:Megaman123@ds157187.mlab.com:57187/megaman';
 mongoose.connect(db);
 
 app.get("/app", function(req, res) {

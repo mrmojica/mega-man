@@ -4,8 +4,10 @@
   "description": "",
   "main": "client/index.js",
   "scripts": {
+    "start": "node server/index",
+    "heroku-postbuild": "npm run build",
     "test": "mocha --compilers js:babel-register test/**/*.js*",
-    "mkdir": "mkdir -p build",
+    "mkdir": "mkdir -p build/css && mkdir -p build/fonts",
     "clean": "rm -rf build",
     "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:js",
     "serve": "nodemon server/index",
