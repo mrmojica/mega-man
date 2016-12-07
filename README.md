@@ -1,6 +1,7 @@
 # Mega Man Robot
-c
-![ezgif com-gif-maker](https://cloud.githubusercontent.com/assets/18106585/20977118/79beedfe-bc72-11e6-977c-7c1bf9a668c9.gif
+A react application allowing the users to compare their favorite Mega Man characters
+
+![ezgif com-gif-maker](https://cloud.githubusercontent.com/assets/18106585/20978246/26c6e65c-bc76-11e6-917f-1a28d0460f9d.gif)
 
 # Mega Man Robot Masters API
 It consumes the [Mega Man Robot Masters API] (https://github.com/JoseGonzalez321/megaman-robot-masters)
