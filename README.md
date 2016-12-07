@@ -7,8 +7,8 @@ A react application allowing the users to compare their favorite Mega Man charac
 It consumes the [Mega Man Robot Masters API] (https://github.com/JoseGonzalez321/megaman-robot-masters)
 
 # Play with it!
-What are you waiting for? Play with it
-Live demo: https://lit-citadel-38534.herokuapp.com/
+What are you waiting for? Play with it.
+- Live demo: https://lit-citadel-38534.herokuapp.com/
 
 # UP & RUNNING
  - git clone or fork it
